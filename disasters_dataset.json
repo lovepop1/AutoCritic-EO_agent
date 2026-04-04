@@ -1,0 +1,1902 @@
+[
+    {
+        "id": "D001",
+        "name": "California Wildfire 2021",
+        "type": "wildfire",
+        "region": "California, USA",
+        "date_range": {
+            "start": "2021-08-01",
+            "end": "2021-08-31"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        -122.5,
+                        38.5
+                    ],
+                    [
+                        -121.5,
+                        38.5
+                    ],
+                    [
+                        -121.5,
+                        39.5
+                    ],
+                    [
+                        -122.5,
+                        39.5
+                    ],
+                    [
+                        -122.5,
+                        38.5
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D002",
+        "name": "Amazon Deforestation 2020",
+        "type": "deforestation",
+        "region": "Para, Brazil",
+        "date_range": {
+            "start": "2020-06-01",
+            "end": "2020-06-30"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        -52.0,
+                        -3.0
+                    ],
+                    [
+                        -51.0,
+                        -3.0
+                    ],
+                    [
+                        -51.0,
+                        -2.0
+                    ],
+                    [
+                        -52.0,
+                        -2.0
+                    ],
+                    [
+                        -52.0,
+                        -3.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D003",
+        "name": "Pakistan Floods 2022",
+        "type": "flood",
+        "region": "Sindh, Pakistan",
+        "date_range": {
+            "start": "2022-08-15",
+            "end": "2022-09-15"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        67.0,
+                        24.0
+                    ],
+                    [
+                        68.5,
+                        24.0
+                    ],
+                    [
+                        68.5,
+                        26.0
+                    ],
+                    [
+                        67.0,
+                        26.0
+                    ],
+                    [
+                        67.0,
+                        24.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": true
+    },
+    {
+        "id": "D004",
+        "name": "Beirut Explosion 2020",
+        "type": "explosion",
+        "region": "Beirut, Lebanon",
+        "date_range": {
+            "start": "2020-08-04",
+            "end": "2020-08-15"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        35.4,
+                        33.8
+                    ],
+                    [
+                        35.6,
+                        33.8
+                    ],
+                    [
+                        35.6,
+                        34.0
+                    ],
+                    [
+                        35.4,
+                        34.0
+                    ],
+                    [
+                        35.4,
+                        33.8
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D005",
+        "name": "Australian Bushfire 2019",
+        "type": "wildfire",
+        "region": "New South Wales, Australia",
+        "date_range": {
+            "start": "2019-11-01",
+            "end": "2019-12-31"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        149.0,
+                        -37.0
+                    ],
+                    [
+                        151.0,
+                        -37.0
+                    ],
+                    [
+                        151.0,
+                        -35.0
+                    ],
+                    [
+                        149.0,
+                        -35.0
+                    ],
+                    [
+                        149.0,
+                        -37.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D006",
+        "name": "Mozambique Cyclone Idai 2019",
+        "type": "cyclone",
+        "region": "Sofala, Mozambique",
+        "date_range": {
+            "start": "2019-03-14",
+            "end": "2019-03-25"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        34.0,
+                        -20.5
+                    ],
+                    [
+                        35.5,
+                        -20.5
+                    ],
+                    [
+                        35.5,
+                        -19.0
+                    ],
+                    [
+                        34.0,
+                        -19.0
+                    ],
+                    [
+                        34.0,
+                        -20.5
+                    ]
+                ]
+            ]
+        },
+        "adversarial": true
+    },
+    {
+        "id": "D007",
+        "name": "Iceland Volcano 2021",
+        "type": "volcanic_eruption",
+        "region": "Reykjanes, Iceland",
+        "date_range": {
+            "start": "2021-03-19",
+            "end": "2021-09-18"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        -22.5,
+                        63.8
+                    ],
+                    [
+                        -22.0,
+                        63.8
+                    ],
+                    [
+                        -22.0,
+                        64.1
+                    ],
+                    [
+                        -22.5,
+                        64.1
+                    ],
+                    [
+                        -22.5,
+                        63.8
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D008",
+        "name": "Bangladesh Cyclone Amphan 2020",
+        "type": "cyclone",
+        "region": "Khulna, Bangladesh",
+        "date_range": {
+            "start": "2020-05-20",
+            "end": "2020-05-30"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        89.0,
+                        22.0
+                    ],
+                    [
+                        90.5,
+                        22.0
+                    ],
+                    [
+                        90.5,
+                        23.5
+                    ],
+                    [
+                        89.0,
+                        23.5
+                    ],
+                    [
+                        89.0,
+                        22.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": true
+    },
+    {
+        "id": "D009",
+        "name": "Greece Wildfire 2021",
+        "type": "wildfire",
+        "region": "Attica, Greece",
+        "date_range": {
+            "start": "2021-08-03",
+            "end": "2021-08-23"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        23.0,
+                        38.0
+                    ],
+                    [
+                        24.5,
+                        38.0
+                    ],
+                    [
+                        24.5,
+                        39.0
+                    ],
+                    [
+                        23.0,
+                        39.0
+                    ],
+                    [
+                        23.0,
+                        38.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D010",
+        "name": "Philippines Typhoon 2020",
+        "type": "typhoon",
+        "region": "Bicol, Philippines",
+        "date_range": {
+            "start": "2020-11-01",
+            "end": "2020-11-10"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        123.0,
+                        13.0
+                    ],
+                    [
+                        124.5,
+                        13.0
+                    ],
+                    [
+                        124.5,
+                        14.5
+                    ],
+                    [
+                        123.0,
+                        14.5
+                    ],
+                    [
+                        123.0,
+                        13.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": true
+    },
+    {
+        "id": "D011",
+        "name": "China Yangtze Floods 2020",
+        "type": "flood",
+        "region": "Hubei, China",
+        "date_range": {
+            "start": "2020-07-01",
+            "end": "2020-08-31"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        112.0,
+                        29.0
+                    ],
+                    [
+                        115.0,
+                        29.0
+                    ],
+                    [
+                        115.0,
+                        31.5
+                    ],
+                    [
+                        112.0,
+                        31.5
+                    ],
+                    [
+                        112.0,
+                        29.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D012",
+        "name": "Sudan Floods 2020",
+        "type": "flood",
+        "region": "Khartoum, Sudan",
+        "date_range": {
+            "start": "2020-08-01",
+            "end": "2020-09-15"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        31.5,
+                        15.0
+                    ],
+                    [
+                        33.0,
+                        15.0
+                    ],
+                    [
+                        33.0,
+                        17.0
+                    ],
+                    [
+                        31.5,
+                        17.0
+                    ],
+                    [
+                        31.5,
+                        15.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D013",
+        "name": "Indonesia Earthquake 2022",
+        "type": "earthquake",
+        "region": "Cianjur, Indonesia",
+        "date_range": {
+            "start": "2022-11-21",
+            "end": "2022-12-01"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        107.0,
+                        -7.0
+                    ],
+                    [
+                        107.5,
+                        -7.0
+                    ],
+                    [
+                        107.5,
+                        -6.5
+                    ],
+                    [
+                        107.0,
+                        -6.5
+                    ],
+                    [
+                        107.0,
+                        -7.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D014",
+        "name": "Haiti Earthquake 2021",
+        "type": "earthquake",
+        "region": "Sud, Haiti",
+        "date_range": {
+            "start": "2021-08-14",
+            "end": "2021-08-30"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        -74.5,
+                        18.0
+                    ],
+                    [
+                        -73.5,
+                        18.0
+                    ],
+                    [
+                        -73.5,
+                        18.8
+                    ],
+                    [
+                        -74.5,
+                        18.8
+                    ],
+                    [
+                        -74.5,
+                        18.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D015",
+        "name": "Peru Floods 2023",
+        "type": "flood",
+        "region": "Piura, Peru",
+        "date_range": {
+            "start": "2023-03-01",
+            "end": "2023-03-31"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        -81.0,
+                        -5.5
+                    ],
+                    [
+                        -80.0,
+                        -5.5
+                    ],
+                    [
+                        -80.0,
+                        -4.5
+                    ],
+                    [
+                        -81.0,
+                        -4.5
+                    ],
+                    [
+                        -81.0,
+                        -5.5
+                    ]
+                ]
+            ]
+        },
+        "adversarial": true
+    },
+    {
+        "id": "D016",
+        "name": "Turkey Earthquake 2023",
+        "type": "earthquake",
+        "region": "Kahramanmaras, Turkey",
+        "date_range": {
+            "start": "2023-02-06",
+            "end": "2023-02-20"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        36.0,
+                        37.0
+                    ],
+                    [
+                        38.0,
+                        37.0
+                    ],
+                    [
+                        38.0,
+                        38.5
+                    ],
+                    [
+                        36.0,
+                        38.5
+                    ],
+                    [
+                        36.0,
+                        37.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D017",
+        "name": "Libya Floods 2023",
+        "type": "flood",
+        "region": "Derna, Libya",
+        "date_range": {
+            "start": "2023-09-10",
+            "end": "2023-09-20"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        22.5,
+                        32.5
+                    ],
+                    [
+                        23.5,
+                        32.5
+                    ],
+                    [
+                        23.5,
+                        33.5
+                    ],
+                    [
+                        22.5,
+                        33.5
+                    ],
+                    [
+                        22.5,
+                        32.5
+                    ]
+                ]
+            ]
+        },
+        "adversarial": true
+    },
+    {
+        "id": "D018",
+        "name": "Morocco Earthquake 2023",
+        "type": "earthquake",
+        "region": "Marrakesh, Morocco",
+        "date_range": {
+            "start": "2023-09-08",
+            "end": "2023-09-20"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        -8.5,
+                        31.0
+                    ],
+                    [
+                        -7.0,
+                        31.0
+                    ],
+                    [
+                        -7.0,
+                        32.0
+                    ],
+                    [
+                        -8.5,
+                        32.0
+                    ],
+                    [
+                        -8.5,
+                        31.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D019",
+        "name": "New Zealand Cyclone Gabrielle 2023",
+        "type": "cyclone",
+        "region": "Hawkes Bay, New Zealand",
+        "date_range": {
+            "start": "2023-02-13",
+            "end": "2023-02-16"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        176.5,
+                        -39.5
+                    ],
+                    [
+                        177.5,
+                        -39.5
+                    ],
+                    [
+                        177.5,
+                        -39.0
+                    ],
+                    [
+                        176.5,
+                        -39.0
+                    ],
+                    [
+                        176.5,
+                        -39.5
+                    ]
+                ]
+            ]
+        },
+        "adversarial": true
+    },
+    {
+        "id": "D020",
+        "name": "Canada Wildfire 2023",
+        "type": "wildfire",
+        "region": "British Columbia, Canada",
+        "date_range": {
+            "start": "2023-06-01",
+            "end": "2023-08-31"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        -125.0,
+                        50.0
+                    ],
+                    [
+                        -122.0,
+                        50.0
+                    ],
+                    [
+                        -122.0,
+                        53.0
+                    ],
+                    [
+                        -125.0,
+                        53.0
+                    ],
+                    [
+                        -125.0,
+                        50.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D021",
+        "name": "Hawaii Wildfire 2023",
+        "type": "wildfire",
+        "region": "Maui, Hawaii",
+        "date_range": {
+            "start": "2023-08-08",
+            "end": "2023-08-15"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        -156.8,
+                        20.8
+                    ],
+                    [
+                        -156.2,
+                        20.8
+                    ],
+                    [
+                        -156.2,
+                        21.2
+                    ],
+                    [
+                        -156.8,
+                        21.2
+                    ],
+                    [
+                        -156.8,
+                        20.8
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D022",
+        "name": "Spain Wildfire 2022",
+        "type": "wildfire",
+        "region": "Zamora, Spain",
+        "date_range": {
+            "start": "2022-07-15",
+            "end": "2022-08-10"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        -7.0,
+                        41.5
+                    ],
+                    [
+                        -5.5,
+                        41.5
+                    ],
+                    [
+                        -5.5,
+                        42.5
+                    ],
+                    [
+                        -7.0,
+                        42.5
+                    ],
+                    [
+                        -7.0,
+                        41.5
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D023",
+        "name": "Bangladesh Floods 2022",
+        "type": "flood",
+        "region": "Sylhet, Bangladesh",
+        "date_range": {
+            "start": "2022-06-10",
+            "end": "2022-07-10"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        91.5,
+                        24.5
+                    ],
+                    [
+                        92.5,
+                        24.5
+                    ],
+                    [
+                        92.5,
+                        25.5
+                    ],
+                    [
+                        91.5,
+                        25.5
+                    ],
+                    [
+                        91.5,
+                        24.5
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D024",
+        "name": "Afghanistan Earthquake 2022",
+        "type": "earthquake",
+        "region": "Paktika, Afghanistan",
+        "date_range": {
+            "start": "2022-06-22",
+            "end": "2022-07-05"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        69.0,
+                        32.5
+                    ],
+                    [
+                        70.5,
+                        32.5
+                    ],
+                    [
+                        70.5,
+                        33.5
+                    ],
+                    [
+                        69.0,
+                        33.5
+                    ],
+                    [
+                        69.0,
+                        32.5
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D025",
+        "name": "Tonga Volcano 2022",
+        "type": "volcanic_eruption",
+        "region": "Tongatapu, Tonga",
+        "date_range": {
+            "start": "2022-01-15",
+            "end": "2022-02-01"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        -175.5,
+                        -21.5
+                    ],
+                    [
+                        -174.5,
+                        -21.5
+                    ],
+                    [
+                        -174.5,
+                        -21.0
+                    ],
+                    [
+                        -175.5,
+                        -21.0
+                    ],
+                    [
+                        -175.5,
+                        -21.5
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D026",
+        "name": "Somalia Drought 2022",
+        "type": "drought",
+        "region": "Baidoa, Somalia",
+        "date_range": {
+            "start": "2022-01-01",
+            "end": "2022-12-31"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        43.0,
+                        2.5
+                    ],
+                    [
+                        45.0,
+                        2.5
+                    ],
+                    [
+                        45.0,
+                        4.5
+                    ],
+                    [
+                        43.0,
+                        4.5
+                    ],
+                    [
+                        43.0,
+                        2.5
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D027",
+        "name": "South Africa Floods 2022",
+        "type": "flood",
+        "region": "KwaZulu-Natal, South Africa",
+        "date_range": {
+            "start": "2022-04-11",
+            "end": "2022-04-25"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        30.5,
+                        -30.5
+                    ],
+                    [
+                        31.5,
+                        -30.5
+                    ],
+                    [
+                        31.5,
+                        -29.5
+                    ],
+                    [
+                        30.5,
+                        -29.5
+                    ],
+                    [
+                        30.5,
+                        -30.5
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D028",
+        "name": "Myanmar Floods 2021",
+        "type": "flood",
+        "region": "Bago, Myanmar",
+        "date_range": {
+            "start": "2021-08-01",
+            "end": "2021-09-30"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        96.0,
+                        17.0
+                    ],
+                    [
+                        97.5,
+                        17.0
+                    ],
+                    [
+                        97.5,
+                        18.5
+                    ],
+                    [
+                        96.0,
+                        18.5
+                    ],
+                    [
+                        96.0,
+                        17.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D029",
+        "name": "Ethiopia Tigray Flooding 2020",
+        "type": "flood",
+        "region": "Tigray, Ethiopia",
+        "date_range": {
+            "start": "2020-07-01",
+            "end": "2020-09-30"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        38.0,
+                        13.0
+                    ],
+                    [
+                        40.0,
+                        13.0
+                    ],
+                    [
+                        40.0,
+                        14.5
+                    ],
+                    [
+                        38.0,
+                        14.5
+                    ],
+                    [
+                        38.0,
+                        13.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D030",
+        "name": "Colombia Landslide 2020",
+        "type": "landslide",
+        "region": "Choco, Colombia",
+        "date_range": {
+            "start": "2020-05-17",
+            "end": "2020-05-30"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        -77.5,
+                        5.5
+                    ],
+                    [
+                        -76.5,
+                        5.5
+                    ],
+                    [
+                        -76.5,
+                        6.5
+                    ],
+                    [
+                        -77.5,
+                        6.5
+                    ],
+                    [
+                        -77.5,
+                        5.5
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D031",
+        "name": "Chile Wildfire 2023",
+        "type": "wildfire",
+        "region": "Biobio, Chile",
+        "date_range": {
+            "start": "2023-02-02",
+            "end": "2023-02-28"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        -73.5,
+                        -37.5
+                    ],
+                    [
+                        -72.0,
+                        -37.5
+                    ],
+                    [
+                        -72.0,
+                        -36.5
+                    ],
+                    [
+                        -73.5,
+                        -36.5
+                    ],
+                    [
+                        -73.5,
+                        -37.5
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D032",
+        "name": "India Cyclone Tauktae 2021",
+        "type": "cyclone",
+        "region": "Gujarat, India",
+        "date_range": {
+            "start": "2021-05-17",
+            "end": "2021-05-19"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        72.0,
+                        21.0
+                    ],
+                    [
+                        73.5,
+                        21.0
+                    ],
+                    [
+                        73.5,
+                        22.5
+                    ],
+                    [
+                        72.0,
+                        22.5
+                    ],
+                    [
+                        72.0,
+                        21.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D033",
+        "name": "Yemen Floods 2022",
+        "type": "flood",
+        "region": "Hadramawt, Yemen",
+        "date_range": {
+            "start": "2022-04-01",
+            "end": "2022-04-30"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        47.0,
+                        15.0
+                    ],
+                    [
+                        49.0,
+                        15.0
+                    ],
+                    [
+                        49.0,
+                        16.5
+                    ],
+                    [
+                        47.0,
+                        16.5
+                    ],
+                    [
+                        47.0,
+                        15.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D034",
+        "name": "Congo Floods 2022",
+        "type": "flood",
+        "region": "Kinshasa, DRC",
+        "date_range": {
+            "start": "2022-01-10",
+            "end": "2022-01-31"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        15.0,
+                        -5.0
+                    ],
+                    [
+                        16.5,
+                        -5.0
+                    ],
+                    [
+                        16.5,
+                        -4.0
+                    ],
+                    [
+                        15.0,
+                        -4.0
+                    ],
+                    [
+                        15.0,
+                        -5.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D035",
+        "name": "Algeria Wildfire 2021",
+        "type": "wildfire",
+        "region": "Tizi Ouzou, Algeria",
+        "date_range": {
+            "start": "2021-08-09",
+            "end": "2021-08-25"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        3.5,
+                        36.5
+                    ],
+                    [
+                        4.5,
+                        36.5
+                    ],
+                    [
+                        4.5,
+                        37.0
+                    ],
+                    [
+                        3.5,
+                        37.0
+                    ],
+                    [
+                        3.5,
+                        36.5
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D036",
+        "name": "Sulawesi Earthquake 2021",
+        "type": "earthquake",
+        "region": "Mamuju, Indonesia",
+        "date_range": {
+            "start": "2021-01-15",
+            "end": "2021-01-31"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        118.5,
+                        -2.0
+                    ],
+                    [
+                        119.5,
+                        -2.0
+                    ],
+                    [
+                        119.5,
+                        -1.0
+                    ],
+                    [
+                        118.5,
+                        -1.0
+                    ],
+                    [
+                        118.5,
+                        -2.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D037",
+        "name": "India Uttarakhand Floods 2021",
+        "type": "flood",
+        "region": "Chamoli, India",
+        "date_range": {
+            "start": "2021-02-07",
+            "end": "2021-02-20"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        79.0,
+                        30.0
+                    ],
+                    [
+                        80.5,
+                        30.0
+                    ],
+                    [
+                        80.5,
+                        31.0
+                    ],
+                    [
+                        79.0,
+                        31.0
+                    ],
+                    [
+                        79.0,
+                        30.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D038",
+        "name": "Germany Floods 2021",
+        "type": "flood",
+        "region": "Ahr Valley, Germany",
+        "date_range": {
+            "start": "2021-07-14",
+            "end": "2021-07-25"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        6.5,
+                        50.2
+                    ],
+                    [
+                        7.5,
+                        50.2
+                    ],
+                    [
+                        7.5,
+                        50.8
+                    ],
+                    [
+                        6.5,
+                        50.8
+                    ],
+                    [
+                        6.5,
+                        50.2
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D039",
+        "name": "Tajikistan Floods 2021",
+        "type": "flood",
+        "region": "Khatlon, Tajikistan",
+        "date_range": {
+            "start": "2021-05-01",
+            "end": "2021-06-30"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        68.0,
+                        37.0
+                    ],
+                    [
+                        70.0,
+                        37.0
+                    ],
+                    [
+                        70.0,
+                        38.5
+                    ],
+                    [
+                        68.0,
+                        38.5
+                    ],
+                    [
+                        68.0,
+                        37.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D040",
+        "name": "Papua New Guinea Earthquake 2022",
+        "type": "earthquake",
+        "region": "Morobe, PNG",
+        "date_range": {
+            "start": "2022-09-11",
+            "end": "2022-09-25"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        146.0,
+                        -6.5
+                    ],
+                    [
+                        147.5,
+                        -6.5
+                    ],
+                    [
+                        147.5,
+                        -5.5
+                    ],
+                    [
+                        146.0,
+                        -5.5
+                    ],
+                    [
+                        146.0,
+                        -6.5
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D041",
+        "name": "Brazil Floods 2022",
+        "type": "flood",
+        "region": "Petropolis, Brazil",
+        "date_range": {
+            "start": "2022-02-15",
+            "end": "2022-03-01"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        -43.5,
+                        -22.8
+                    ],
+                    [
+                        -43.0,
+                        -22.8
+                    ],
+                    [
+                        -43.0,
+                        -22.3
+                    ],
+                    [
+                        -43.5,
+                        -22.3
+                    ],
+                    [
+                        -43.5,
+                        -22.8
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D042",
+        "name": "Philippines Typhoon Rai 2021",
+        "type": "typhoon",
+        "region": "Visayas, Philippines",
+        "date_range": {
+            "start": "2021-12-16",
+            "end": "2021-12-20"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        123.5,
+                        9.0
+                    ],
+                    [
+                        125.0,
+                        9.0
+                    ],
+                    [
+                        125.0,
+                        11.0
+                    ],
+                    [
+                        123.5,
+                        11.0
+                    ],
+                    [
+                        123.5,
+                        9.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": true
+    },
+    {
+        "id": "D043",
+        "name": "Ecuador Earthquake 2023",
+        "type": "earthquake",
+        "region": "El Oro, Ecuador",
+        "date_range": {
+            "start": "2023-03-18",
+            "end": "2023-03-31"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        -80.5,
+                        -3.5
+                    ],
+                    [
+                        -79.5,
+                        -3.5
+                    ],
+                    [
+                        -79.5,
+                        -3.0
+                    ],
+                    [
+                        -80.5,
+                        -3.0
+                    ],
+                    [
+                        -80.5,
+                        -3.5
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D044",
+        "name": "Malawi Cyclone Freddy 2023",
+        "type": "cyclone",
+        "region": "Blantyre, Malawi",
+        "date_range": {
+            "start": "2023-03-11",
+            "end": "2023-03-14"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        34.5,
+                        -16.0
+                    ],
+                    [
+                        35.5,
+                        -16.0
+                    ],
+                    [
+                        35.5,
+                        -15.0
+                    ],
+                    [
+                        34.5,
+                        -15.0
+                    ],
+                    [
+                        34.5,
+                        -16.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": true
+    },
+    {
+        "id": "D045",
+        "name": "Bolivia Floods 2022",
+        "type": "flood",
+        "region": "Beni, Bolivia",
+        "date_range": {
+            "start": "2022-02-01",
+            "end": "2022-03-31"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        -67.0,
+                        -12.0
+                    ],
+                    [
+                        -65.5,
+                        -12.0
+                    ],
+                    [
+                        -65.5,
+                        -10.5
+                    ],
+                    [
+                        -67.0,
+                        -10.5
+                    ],
+                    [
+                        -67.0,
+                        -12.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D046",
+        "name": "India Kerala Floods 2021",
+        "type": "flood",
+        "region": "Kerala, India",
+        "date_range": {
+            "start": "2021-10-15",
+            "end": "2021-11-05"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        76.0,
+                        8.5
+                    ],
+                    [
+                        77.5,
+                        8.5
+                    ],
+                    [
+                        77.5,
+                        10.5
+                    ],
+                    [
+                        76.0,
+                        10.5
+                    ],
+                    [
+                        76.0,
+                        8.5
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D047",
+        "name": "Nigeria Floods 2022",
+        "type": "flood",
+        "region": "Anambra, Nigeria",
+        "date_range": {
+            "start": "2022-10-01",
+            "end": "2022-11-15"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        6.5,
+                        5.5
+                    ],
+                    [
+                        7.5,
+                        5.5
+                    ],
+                    [
+                        7.5,
+                        6.5
+                    ],
+                    [
+                        6.5,
+                        6.5
+                    ],
+                    [
+                        6.5,
+                        5.5
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D048",
+        "name": "Guatemala Volcanic Eruption 2021",
+        "type": "volcanic_eruption",
+        "region": "Sacatepequez, Guatemala",
+        "date_range": {
+            "start": "2021-01-01",
+            "end": "2021-02-28"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        -91.0,
+                        14.0
+                    ],
+                    [
+                        -90.5,
+                        14.0
+                    ],
+                    [
+                        -90.5,
+                        14.5
+                    ],
+                    [
+                        -91.0,
+                        14.5
+                    ],
+                    [
+                        -91.0,
+                        14.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    },
+    {
+        "id": "D049",
+        "name": "Iran Floods 2022",
+        "type": "flood",
+        "region": "Khuzestan, Iran",
+        "date_range": {
+            "start": "2022-05-15",
+            "end": "2022-06-15"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        47.5,
+                        31.0
+                    ],
+                    [
+                        49.5,
+                        31.0
+                    ],
+                    [
+                        49.5,
+                        32.5
+                    ],
+                    [
+                        47.5,
+                        32.5
+                    ],
+                    [
+                        47.5,
+                        31.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": true
+    },
+    {
+        "id": "D050",
+        "name": "Cameroon Floods 2022",
+        "type": "flood",
+        "region": "Adamawa, Cameroon",
+        "date_range": {
+            "start": "2022-09-01",
+            "end": "2022-10-31"
+        },
+        "aoi": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        13.0,
+                        7.0
+                    ],
+                    [
+                        14.5,
+                        7.0
+                    ],
+                    [
+                        14.5,
+                        8.5
+                    ],
+                    [
+                        13.0,
+                        8.5
+                    ],
+                    [
+                        13.0,
+                        7.0
+                    ]
+                ]
+            ]
+        },
+        "adversarial": false
+    }
+]
