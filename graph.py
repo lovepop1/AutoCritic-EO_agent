@@ -40,7 +40,7 @@ load_dotenv()  # loads .env from the project folder
 import boto3
 from langgraph.graph import END, StateGraph
 
-from mock_tools import TOOL_REGISTRY, call_tool
+from api_tools import TOOL_REGISTRY, call_tool
 from state import (
     AOVGraph,
     AOVVertex,
@@ -75,7 +75,53 @@ def _invoke_claude(
     For mock image URLs (e.g. 'mock_base.png', 'CLOUD_OBSCURED.png') we
     embed a 1×1 white PNG placeholder so the pipeline runs without real images.
     The Critic prompt carries enough semantic context to behave correctly.
+    
+    If MOCK_MODE=true in .env, returns mock responses without calling AWS.
     """
+    mock_mode = os.getenv("MOCK_MODE", "false").lower() in ("true", "1", "yes")
+    
+    if mock_mode:
+        # Determine which type of mock response to return based on system_prompt
+        if "Meta-Agent" in system_prompt and "AOV" in system_prompt:
+            # Planning node mock response
+            logger.info("[_invoke_claude] MOCK MODE: returning mock planning response")
+            return json.dumps({
+                "vertices": [
+                    {
+                        "id": "T1",
+                        "tool": "check_availability",
+                        "params": {"date": "2024-10-30", "location": "Valencia"},
+                        "depends_on": []
+                    },
+                    {
+                        "id": "T2",
+                        "tool": "load_imagery",
+                        "params": {"date_range": ["2024-10-30", "2024-10-31"], "location": "Valencia"},
+                        "depends_on": ["T1"]
+                    },
+                    {
+                        "id": "T3",
+                        "tool": "compute_mask",
+                        "params": {"file_list": ["T2_output"], "index": "NBR"},
+                        "depends_on": ["T2"]
+                    }
+                ]
+            })
+        elif "Multimodal Critic" in system_prompt:
+            # Critic node mock response
+            logger.info("[_invoke_claude] MOCK MODE: returning mock critic response")
+            return json.dumps({
+                "pass_flag": True,
+                "anomaly_type": "CLEAN",
+                "affected_vertex": None,
+                "verbal_reflection": "Multi-temporal sequence analysis complete. No anomalies detected in cloud cover, NoData artifacts, temporal alignment, or index scaling.",
+                "recovery_instruction": None
+            })
+        else:
+            # Report writer / other mock response
+            logger.info("[_invoke_claude] MOCK MODE: returning mock synthesis response")
+            return "# AutoCritic-EO Assessment Report\n\n## Executive Summary\nDisaster impact analysis for Valencia flooding event on 2024-10-30.\n\n## Results\nContinuous flooding progression detected across temporal sequence."
+    
     import base64
     import struct
     import zlib
@@ -243,9 +289,32 @@ def planning_node(state: AutoCriticState) -> AutoCriticState:
 # Node 2: execution_node
 # ---------------------------------------------------------------------------
 
+def _tool_response_has_no_data(response: Dict[str, Any]) -> bool:
+    if response.get("status") != "success":
+        return True
+
+    data = response.get("data", {}) or {}
+    if data.get("status") == "no_data":
+        return True
+
+    if "images_found" in data:
+        images_found = data.get("images_found")
+        if isinstance(images_found, int) and images_found < 2:
+            return True
+
+    if "file_list" in data:
+        file_list = data.get("file_list")
+        if not file_list:
+            return True
+        if isinstance(file_list, list) and len(file_list) < 2:
+            return True
+
+    return False
+
+
 def execution_node(state: AutoCriticState) -> AutoCriticState:
     """
-    Iterate through the topologically sorted AOV graph and call mock tools.
+    Iterate through the topologically sorted AOV graph and call live tools.
     Collects ToolResult entries and assembles the image_payload for the Critic.
     """
     aov: AOVGraph = state["aov_graph"]
@@ -261,6 +330,51 @@ def execution_node(state: AutoCriticState) -> AutoCriticState:
         params = vertex.get("params", {})
 
         logger.info("[execution_node] %s → %s(%s)", vid, tool_name, params)
+
+        # Guardrail: do not run compute_mask if prior imagery is insufficient.
+        if tool_name == "compute_mask":
+            skip_reason = None
+            for dep_id in vertex.get("depends_on", []):
+                parent = next((r for r in results if r["vertex_id"] == dep_id), None)
+                if parent is None:
+                    continue
+
+                if parent["tool"] == "check_availability":
+                    parent_data = parent["response"].get("data", {}) or {}
+                    images_found = parent_data.get("images_found")
+                    if isinstance(images_found, int) and images_found < 2:
+                        skip_reason = (
+                            "Upstream availability check found fewer than 2 images. "
+                            "Aborting compute_mask to avoid invalid change detection."
+                        )
+                        break
+
+                if parent["tool"] == "load_imagery":
+                    if _tool_response_has_no_data(parent["response"]):
+                        skip_reason = (
+                            "Upstream imagery load returned no valid file_list. "
+                            "Aborting compute_mask to avoid math on empty arrays."
+                        )
+                        break
+
+            if skip_reason:
+                response = {
+                    "status": "skipped",
+                    "message": f"Compute mask skipped: {skip_reason}",
+                }
+                success = False
+                error = skip_reason
+                result = ToolResult(
+                    vertex_id=vid,
+                    tool=tool_name,
+                    params=params,
+                    response=response,
+                    success=success,
+                    error=error,
+                    skipped=True,
+                )
+                results.append(result)
+                continue
 
         try:
             response = call_tool(tool_name, params)
@@ -283,11 +397,12 @@ def execution_node(state: AutoCriticState) -> AutoCriticState:
         results.append(result)
 
         # Accumulate image sequence for the Critic
-        data = response.get("data", {})
-        if "file_list" in data:
-            image_payload.setdefault("file_list", []).extend(data["file_list"])
-        if "computed_masks" in data:
-            image_payload.setdefault("computed_masks", []).extend(data["computed_masks"])
+        if response.get("status") == "success":
+            data = response.get("data", {}) or {}
+            if "file_list" in data and isinstance(data["file_list"], list):
+                image_payload.setdefault("file_list", []).extend(data["file_list"])
+            if "computed_masks" in data and isinstance(data["computed_masks"], list):
+                image_payload.setdefault("computed_masks", []).extend(data["computed_masks"])
 
     return {
         **state,
@@ -302,26 +417,29 @@ def execution_node(state: AutoCriticState) -> AutoCriticState:
 # ---------------------------------------------------------------------------
 
 _CRITIC_SYSTEM = """You are the AutoCritic-EO Space-to-Space Multimodal Critic.
-You receive a multi-temporal sequence of satellite images (file_list and computed_masks) from
-an EO analysis pipeline and must evaluate them for chronological progression and semantic anomalies.
+You receive a multi-temporal image sequence (file_list and computed_masks) from an EO analysis pipeline and must evaluate it for chronological progression and semantic anomalies in the sequence.
 
 Anomaly taxonomy:
-  CLOUD_OBSCURED      — extreme cloud obscuration; pixel values uniform.
-  NODATA_STRIPE       — spatial/projection mismatch causing NoData rendering artifacts (rows/columns of NoData).
+  CLOUD_OBSCURED      — extreme cloud obscuration across the multi-temporal image sequence.
+  NODATA_STRIPE       — spatial/projection mismatches causing NoData rendering artifacts (rows/columns of missing data).
   INDEX_SCALING_ERROR — mathematical index scaling error (e.g., NDVI outside [-1,1]).
-  TEMPORAL_ALIGNMENT  — temporal alignment error (images out of sequence).
+  TEMPORAL_ALIGNMENT  — temporal alignment errors where images are out of sequence.
   CLEAN               — disaster impact logically expands or recedes; no anomaly detected.
 
 The image sequences passed to you are:
   file_list: {file_list}
   computed_masks: {computed_masks}
 
-CRITICAL RULES: 
-1. Visually verify that the disaster impact logically expands or recedes chronologically.
-2. If any image contains "CLOUD_OBSCURED", report CLOUD_OBSCURED.
-3. If any image contains "NODATA_STRIPE", report NODATA_STRIPE.
-4. If any image contains "NDVI_EXCEEDS", report INDEX_SCALING_ERROR.
-5. If sequence is wrong, report TEMPORAL_ALIGNMENT.
+CRITICAL RULES:
+1. Evaluate this as a multi-temporal image sequence, not as isolated individual images.
+2. Check explicitly for extreme cloud obscuration.
+3. Check explicitly for spatial/projection mismatches causing NoData rendering artifacts.
+4. Check explicitly for temporal alignment errors where images are out of sequence.
+5. Check explicitly for mathematical index scaling errors.
+6. If any image contains "CLOUD_OBSCURED", report CLOUD_OBSCURED.
+7. If any image contains "NODATA_STRIPE", report NODATA_STRIPE.
+8. If any image contains "NDVI_EXCEEDS", report INDEX_SCALING_ERROR.
+9. If the sequence order is wrong, report TEMPORAL_ALIGNMENT.
 
 Respond with a JSON object ONLY (no markdown fences):
 {{
@@ -411,6 +529,13 @@ Report (markdown format) that includes:
   3. Quality Assurance (critic findings)
   4. Results (affected area, change metrics)
   5. Recommendations
+
+If the workflow was halted or skipped because no valid satellite imagery was
+available, explain that clearly and mention any fallback attempts or search
+expansions. For example, note if the system geocoded the requested location,
+expanded the search window, or attempted both Optical and SAR sources, but still
+could not find at least two valid satellite passes for multi-temporal change
+detection.
 """
 
 

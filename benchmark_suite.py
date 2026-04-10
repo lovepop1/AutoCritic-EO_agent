@@ -40,6 +40,12 @@ from langchain_aws import ChatBedrockConverse
 from langchain_core.messages import HumanMessage, SystemMessage
 
 def _invoke_claude(system: str, user_msg: str, temperature: float = 0.0) -> str:
+    mock_mode = os.getenv("MOCK_MODE", "false").lower() in ("true", "1", "yes")
+    
+    if mock_mode:
+        logger.info("[benchmark_suite._invoke_claude] MOCK MODE: returning mock response")
+        return "Mock Claude response for benchmark testing."
+    
     model_id = os.getenv("BEDROCK_MODEL_ID", "us.amazon.nova-pro-v1:0")
     llm = ChatBedrockConverse(
         model_id=model_id,

@@ -36,7 +36,7 @@ class AOVGraph(TypedDict):
     execution_order: List[str]  # topologically sorted vertex IDs
 
 
-class ToolResult(TypedDict):
+class ToolResult(TypedDict, total=False):
     """Result produced by a single mock-tool invocation."""
     vertex_id: str
     tool: str
@@ -44,6 +44,7 @@ class ToolResult(TypedDict):
     response: Dict[str, Any]   # raw JSON response from the mock tool
     success: bool
     error: Optional[str]
+    skipped: bool
 
 
 class CriticFeedback(TypedDict):
